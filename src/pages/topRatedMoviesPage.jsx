@@ -6,7 +6,6 @@ import Spinner from "../components/spinner";
 import WriteReview from "../components/cardIcons/writeReview";
 
 const TopRatedMoviesPage = () => {
-  // Fetch top rated movies directly from TMDB
   const { data, error, isLoading, isError } = useQuery({
     queryKey: ["topRatedMovies"],
     queryFn: getTopRatedMovies,
@@ -17,7 +16,6 @@ const TopRatedMoviesPage = () => {
     return <Spinner />;
   }
 
-  // Show error message if fetch fails
   if (isError) {
     return <h1>{error.message}</h1>;
   }
